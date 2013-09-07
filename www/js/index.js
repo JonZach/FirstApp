@@ -28,22 +28,9 @@ function loadRepos() {
             + "<h4>" + repo.name + "</h4>"
             + "<p>" + repo.username + "</p></a></li>");
         });
-        $('#allRepos').listview('refresh');
+        // $('#allRepos').listview('refresh');
     });
 }
-
-function getUrlVars() {
-    var vars = [], hash;
-    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
-    for(var i = 0; i < hashes.length; i++)
-    {
-        hash = hashes[i].split('=');
-        vars.push(hash[0]);
-        vars[hash[0]] = hash[1];
-    }
-    return vars;
-}
-
 
 // bind an action to jQuery Mobile’s pageshow event. 
 // When fired,will make call to GitHub API get repo method to request the full details for the selected project
@@ -66,4 +53,16 @@ function loadRepoDetail(owner,name) {
          $('#avatar').attr('src', repo.owner.avatar_url);
          $('#ownerName').html("<strong>Owner:</strong> <a href='" + repo.owner.url + "'>" + repo.owner.login + "</a>");
      });
+}
+
+function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for(var i = 0; i < hashes.length; i++)
+    {
+        hash = hashes[i].split('=');
+        vars.push(hash[0]);
+        vars[hash[0]] = hash[1];
+    }
+    return vars;
 }
