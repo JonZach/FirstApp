@@ -28,7 +28,7 @@ function loadRepos() {
             + "<h4>" + repo.name + "</h4>"
             + "<p>" + repo.username + "</p></a></li>");
         });
-        // $('#allRepos').listview('refresh');
+        $('#allRepos').listview('refresh');
     });
 }
 
